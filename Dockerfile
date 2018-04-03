@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install shadowsocks
 
-ENTRYPOINT ["/bin/sh", "-c","/usr/local/bin/ssserver -p $PORT -k $PASSWORD -m $ENCRYPTION"]
+CMD ["/bin/sh", "-c","/usr/local/bin/ssserver -p $PORT -k $PASSWORD -m $ENCRYPTION"]
 
 # usage:
 # docker run -d --restart=always -p 1314:1314 ficapy/shadowsocks -s 0.0.0.0 -p 1314 -k $PD -m chacha20
